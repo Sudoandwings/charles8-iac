@@ -21,3 +21,5 @@ Key Features
 - AWS Certificate Manager (ACM)**: Created SSL certificates to enable HTTPS for secure access.
 - Public Access Restrictions**: Modified S3 public access settings to enhance security.
 - Documentation & Automation**: Provided comprehensive documentation for Terraform scripts and automated resource management.
+
+**Averaging $1.20 monthly to host the site on AWS
