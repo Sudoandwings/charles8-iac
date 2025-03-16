@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
+    <title>Projects</title>
+</head>
+<body>
+
+    <!-- Navigation Tabs -->
+    <nav>
+        <ul class="tabs">
+            <li><a href="../index.html" class="glow-on-hover">Home</a></li>
+            <li><a href="../rindex.html" class="glow-on-hover">Resume</a></li>
+            <li><a href="../pindex.html" class="glow-on-hover">Projects</a></li>
+            <li><a href="../aindex.html" class="glow-on-hover">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Title Section -->
+    <div class="resume-container">
+        <h1 class="glitch" data-text="Projects">Projects</h1>
+    </div>
+
+    <!-- Bottom Scrolling Banner -->
+    <div class="scroll-container bottom-scroll">
+        <div class="scrolling-text">
+            AWS | Cloudwatch | AWS S3 | HTML | CSS | PC Hardware | Active Directory | IAM | Amplify |  lambda | DynamoDB | API Gateway | Cognito | GraphQL |
+            AWS | Cloudwatch | AWS S3 | HTML | CSS | PC Hardware | Active Directory | IAM | Amplify |  lambda | DynamoDB | API Gateway | Cognito | GraphQL |
+        </div>
+    </div>
+
+</body>
+</html>
+
+<div class="project-gallery">
+    <div class="card" onclick="showPreview(1)">Cloud Resume</div>
+    <div class="card" onclick="showPreview(2)">AWS Webpage</div>
+    <div class="card" onclick="showPreview(3)">Join PC to Domain</div>
+    <div class="card" onclick="showPreview(4)">AWS iOS App</div>
+    <div class="card" onclick="showPreview(5)">Resume Website</div>
+</div>
+
+<div class="preview-container" id="preview-container">
+    <div class="slideshow">
+        <!-- Slideshow content will be injected here dynamically -->
+    </div>
+    <div class="description">
+        <p id="project-description"></p>
+    </div>
+    <button onclick="closePreview()">Close Preview</button>
+</div>
+

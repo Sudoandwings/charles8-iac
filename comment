@@ -1,0 +1,4 @@
+Create a cloudfront distribution id then copy its id paste in graterthan less than symbols
+and it clears chache so any new changes to work flow can be seen
+
+aws cloudfront create-invalidation --distribution-id <distribution-id> --paths "/*"

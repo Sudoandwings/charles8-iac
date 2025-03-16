@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: #fff; /* Set text color to white */
+}
+
+/* Centered Navigation Tabs */
+nav {
+    position: absolute;
+    top: 20px; /* Consistent distance from the top */
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /* Center the nav container */
+}
+
+.tabs {
+    list-style: none;
+    display: inline-flex;
+    gap: 15px; /* Space between tabs */
+    position: relative;
+    z-index: 300; /* Ensure tabs stay visible above background */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for visibility */
+    padding: 10px; /* Space inside the tabs */
+    margin: 0 auto; /* Center the tabs */
+}
+
+.tabs li {
+    display: inline;
+}
+
+.tabs a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: .9em;
+    padding: 10px 15px; /* Padding inside each tab link */
+}
+
+/* Resume Container */
+.resume-container1 {
+    margin-top: 300px; /* Adjust this value to control how far down it is */
+    text-align: center; /* Align text to the left for readability */
+    max-width: 800px; /* Set a max width for readability */
+    color: #fff; /* Set text color to white */
+}
+
+/* Main container to center title */
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin-top: -450px; /* Adjust as needed */
+    width: 100vw; /* Full width of viewport */
+}
+
+/* Project title styling */
+.glitch {
+    text-align: center;
+    font-size: 2em; /* Adjust as needed */
+    margin: 0; /* Remove default margin */
+}
+/* Glitch Effect for Name */
+.glitch {
+    font-size: 4em; /* Size for Name */
+    font-weight: bold;
+    position: relative;
+    color: #fff; /* Set to white */
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+/* Glitch Layers for Name */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    overflow: hidden;
+}
+
+/* Before Element */
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1; /* Adjusted color */
+    animation: glitch 0.6s infinite linear alternate-reverse; /* Slowed down */
+}
+
+/* After Element */
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00d5ff; /* Adjusted color */
+    animation: glitch 0.5s infinite linear alternate-reverse; /* Slowed down */
+}
+
+/* Keyframes for Glitch Effect */
+@keyframes glitch {
+    0% {
+        clip: rect(42px, 9999px, 65px, 0);
+        transform: translate(-1px, -1px) scale(1.01);
+    }
+    10% {
+        clip: rect(12px, 9999px, 75px, 0);
+        transform: translate(3px, -3px) scale(1.03);
+    }
+    20% {
+        clip: rect(32px, 9999px, 20px, 0);
+        transform: translate(-2px, -2px) scale(1.05);
+    }
+    30% {
+        clip: rect(16px, 9999px, 90px, 0);
+        transform: translate(2px, 1px) scale(0.99);
+    }
+    40% {
+        clip: rect(72px, 9999px, 60px, 0);
+        transform: translate(-3px, -3px) scale(1.04);
+    }
+    50% {
+        clip: rect(28px, 9999px, 55px, 0);
+        transform: translate(4px, 3px) scale(1.01);
+    }
+    60% {
+        clip: rect(42px, 9999px, 80px, 0);
+        transform: translate(-1px, -1px) scale(1.02);
+    }
+    70% {
+        clip: rect(36px, 9999px, 50px, 0);
+        transform: translate(2px, -2px) scale(1.03);
+    }
+    80% {
+        clip: rect(24px, 9999px, 88px, 0);
+        transform: translate(-2px, 2px) scale(1.01);
+    }
+    90% {
+        clip: rect(48px, 9999px, 30px, 0);
+        transform: translate(3px, -1px) scale(1.04);
+    }
+    100% {
+        clip: rect(8px, 9999px, 70px, 0);
+        transform: translate(-3px, 3px) scale(1);
+    }
+}
+
+
+/* Blink Caret Animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff; /* Change to desired color */
+    }
+}
+
+/* Scrolling container settings */
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.9em;
+    color: #fff;
+    position: relative;
+}
+
+/* Top scrolling banner */
+.top-scroll {
+    position: absolute;
+    top: 10px;
+}
+
+.top-scroll .scrolling-text {
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Bottom scrolling banner */
+.bottom-scroll {
+    position: absolute;
+    bottom: 10px;
+}
+
+.bottom-scroll .scrolling-text {
+    animation: scroll-right 20s linear infinite;
+}
+
+/* Scrolling text style */
+.scrolling-text {
+    display: inline-block;
+    padding-right: 50px; /* Adjust padding for a seamless loop */
+}
+
+/* Left-to-right scroll animation */
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    to {
+        transform: translateX(-100%); /* Move off-screen to the left */
+    }
+}
+
+/* Right-to-left scroll animation */
+@keyframes scroll-right {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    to {
+        transform: translateX(100%); /* Move off-screen to the right */
+    }
+}
+
+/* Glow Effect */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 40px; /* Align text vertically */
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #001f3f, #3d0070, #009688, #001f3f, #3d0070, #dfd9d1, #f7d794);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(4px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.project-gallery {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    width: 167px;
+    height: 240px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    transform-origin: center;
+}
+
+/* Position and layer each card with different rotations and z-index */
+.card:nth-child(1) { 
+    transform: rotate(-10deg); 
+    z-index: 5;
+    top: 20px;
+    left: -120px;
+}
+
+.card:nth-child(2) { 
+    transform: rotate(12deg); 
+    z-index: 4;
+    top: 60px;
+    left: 30px;
+}
+
+.card:nth-child(3) { 
+    transform: rotate(12deg); 
+    z-index: 3;
+    top: 75px;
+    left: -285px;
+}
+
+.card:nth-child(4) { 
+    transform: rotate(40deg); 
+    z-index: 2;
+    top: 140px;
+    left: 120px;
+}
+
+.card:nth-child(5) { 
+    transform: rotate(-80deg); 
+    z-index: 1;
+    top: 180px;
+    left: -120px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 30px rgba(0, 0, 0, 0.3);
+    z-index: 6;
+}
+
+.preview-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.slideshow {
+    width: 100%;
+    height: 250px;
+    background-color: #444;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+

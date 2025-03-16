@@ -1,0 +1,250 @@
+Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: #fff; /* Set text color to white */
+}
+
+/* Centered Navigation Tabs */
+nav {
+    position: absolute;
+    top: 20px; /* Consistent distance from the top */
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /* Center the nav container */
+}
+
+.tabs {
+    list-style: none;
+    display: inline-flex;
+    gap: 15px; /* Space between tabs */
+    position: relative;
+    z-index: 300; /* Ensure tabs stay visible above background */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for visibility */
+    padding: 10px; /* Space inside the tabs */
+    margin: 0 auto; /* Center the tabs */
+}
+
+.tabs li {
+    display: inline;
+}
+
+.tabs a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: .9em;
+    padding: 10px 15px; /* Padding inside each tab link */
+}
+
+/* Resume Container */
+.resume-container1 {
+    margin-top: 300px; /* Adjust this value to control how far down it is */
+    text-align: left; /* Align text to the left for readability */
+    max-width: 800px; /* Set a max width for readability */
+    color: #fff; /* Set text color to white */
+}
+
+.resume-container {
+    position: absolute; /* Positioning to the top-left */
+    top: 90px; /* Adjust the distance from the top */
+    left: 20px; /* Adjust the distance from the left */
+}
+
+/* Glitch Effect for Name */
+.glitch {
+    font-size: 4em; /* Size for Name */
+    font-weight: bold;
+    position: relative;
+    color: #fff; /* Set to white */
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+/* Glitch Layers for Name */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Before Element */
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1; /* Adjusted color */
+    animation: glitch 0.6s infinite linear alternate-reverse; /* Slowed down */
+}
+
+/* After Element */
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00d5ff; /* Adjusted color */
+    animation: glitch 0.5s infinite linear alternate-reverse; /* Slowed down */
+}
+
+/* Keyframes for Glitch Effect */
+@keyframes glitch {
+    0% {
+        clip: rect(42px, 9999px, 65px, 0);
+        transform: translate(-1px, -1px) scale(1.01);
+    }
+    10% {
+        clip: rect(12px, 9999px, 75px, 0);
+        transform: translate(3px, -3px) scale(1.03);
+    }
+    20% {
+        clip: rect(32px, 9999px, 20px, 0);
+        transform: translate(-2px, -2px) scale(1.05);
+    }
+    30% {
+        clip: rect(16px, 9999px, 90px, 0);
+        transform: translate(2px, 1px) scale(0.99);
+    }
+    40% {
+        clip: rect(72px, 9999px, 60px, 0);
+        transform: translate(-3px, -3px) scale(1.04);
+    }
+    50% {
+        clip: rect(28px, 9999px, 55px, 0);
+        transform: translate(4px, 3px) scale(1.01);
+    }
+    60% {
+        clip: rect(42px, 9999px, 80px, 0);
+        transform: translate(-1px, -1px) scale(1.02);
+    }
+    70% {
+        clip: rect(36px, 9999px, 50px, 0);
+        transform: translate(2px, -2px) scale(1.03);
+    }
+    80% {
+        clip: rect(24px, 9999px, 88px, 0);
+        transform: translate(-2px, 2px) scale(1.01);
+    }
+    90% {
+        clip: rect(48px, 9999px, 30px, 0);
+        transform: translate(3px, -1px) scale(1.04);
+    }
+    100% {
+        clip: rect(8px, 9999px, 70px, 0);
+        transform: translate(-3px, 3px) scale(1);
+    }
+}
+
+/* Modern Thin Font for Typewriter Subtitle */
+.modern-title {
+    font-size: 0.9em; /* Match tab size */
+    font-weight: 300; /* Thin font weight */
+    color: #fff; /* Set to white */
+    margin-top: 10px; /* Space between title and subtitle */
+}
+
+/* Typewriter Effect */
+.typewrite {
+    color: #fff; /* Set to white */
+    position: relative;
+    font-family: 'Orbitron', sans-serif; /* Set to Orbitron */
+    font-size: 0.5em; /* Match tab size */
+}
+
+/* Typewriter Animation */
+.typewrite .wrap {
+    border-right: 0.08em solid #fff; /* Change to desired color */
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typewriting Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width:100%;
+    }
+}
+
+/* Blink Caret Animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff; /* Change to desired color */
+    }
+}
+
+/* Glow Effect */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 40px; /* Align text vertically */
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #001f3f, #3d0070, #009688, #001f3f, #3d0070, #dfd9d1, #f7d794);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(4px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
